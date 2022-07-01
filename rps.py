@@ -62,6 +62,14 @@ class Game:
                 (one == 'scissors' and two == 'paper') or
                 (one == 'paper' and two == 'rock'))
 
+    def rounds(self):
+        while True:
+            self.number_rounds = input(
+                "How many rounds would you like to play?")
+            if self.number_rounds.isdigit():
+                return self.number_rounds
+            elif self.number_rounds.lower() == 'exit':
+                exit()
 
     def play_round(self):
         move1 = self.p1.move()
