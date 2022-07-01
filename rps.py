@@ -24,6 +24,10 @@ class RandomPlayer(Player):
         return random.choice(self.moves)
 
 
+class ReflectPlayer(Player):
+    def move(self):
+        return self.their_move
+
 def beats(one, two):
     return ((one == 'rock' and two == 'scissors') or
             (one == 'scissors' and two == 'paper') or
