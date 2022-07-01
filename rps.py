@@ -18,6 +18,12 @@ class Player:
         self.my_move = my_move
         self.their_move = their_move
 
+
+class RandomPlayer(Player):
+    def move(self):
+        return random.choice(self.moves)
+
+
 def beats(one, two):
     return ((one == 'rock' and two == 'scissors') or
             (one == 'scissors' and two == 'paper') or
