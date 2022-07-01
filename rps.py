@@ -28,6 +28,17 @@ class ReflectPlayer(Player):
     def move(self):
         return self.their_move
 
+
+class CyclePlayer(Player):
+    def move(self)
+        if self.my_move == self.moves[0]:
+            return self.moves[2]
+        elif self.my_move == self.moves[1]:
+            return self.moves[0]
+        else:
+            return self.moves[1]
+
+
 def beats(one, two):
     return ((one == 'rock' and two == 'scissors') or
             (one == 'scissors' and two == 'paper') or
