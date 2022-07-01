@@ -96,10 +96,10 @@ class game:
 
     def play_game(self):
         print(
-            "Game start!"
+            "\nGet ready for an exciting "
+            "game of rock, paper, scissors!"
             "\nIf you would like to quit the game, "
-            "please enter \'exit\' when asked "
-            "\'How many rounds would you like to play?\'"
+            "please enter \'exit\'."
         )
         self.rounds()
         for round in range(int(self.number_rounds)):
