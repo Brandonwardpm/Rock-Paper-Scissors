@@ -11,12 +11,12 @@ class Player:
     moves = ['rock', 'paper', 'scissors']
 
     def __init__(self):
-        self.hero_move = self.moves
-        self.villain_move = random.choice(self.moves)
+        self.my_move = self.moves
+        self.their_move = random.choice(self.moves)
 
     def learn(self, my_move, their_move):
-        pass
-
+        self.my_move = my_move
+        self.their_move = their_move
 
 def beats(one, two):
     return ((one == 'rock' and two == 'scissors') or
