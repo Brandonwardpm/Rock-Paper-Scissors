@@ -65,7 +65,7 @@ class game:
     def rounds(self):
         while True:
             self.number_rounds = input(
-                "How many rounds would you like to play?")
+                "How many rounds would you like to play?\n")
             if self.number_rounds.isdigit():
                 return self.number_rounds
             elif self.number_rounds.lower() == 'exit':
