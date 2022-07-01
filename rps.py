@@ -74,7 +74,23 @@ class Game:
     def play_round(self):
         move1 = self.p1.move()
         move2 = self.p2.move()
-        print(f"Player 1: {move1}  Player 2: {move2}")
+        if self.beats(move1, move2):
+            self.score_p1 += 1
+            winner = "Player 1 wins! Congratulations!"
+        elif move1 == move2:
+            self.score_p1 = self.score_p1
+            self.score_2 = self.score_p2
+            winner = "It's a tie."
+        else:
+            self.score_p2 += 1
+            winner = "Player 2 wins! Congratulations!"
+        print(
+            f"You threw: {move1}"  
+            f"\n Our opponent threw: {move2}"
+            f"\n{winner}"
+            f"\nScore: Player 1 ({self.score_p1}),"
+            f"Player 2 ({self.score_p2})"
+        )
         self.p1.learn(move1, move2)
         self.p2.learn(move2, move1)
 
