@@ -8,7 +8,7 @@ and reports both Player's scores each round."""
 in this game"""
 
 
-class Player:
+class player:
     moves = ['rock', 'paper', 'scissors']
 
     def __init__(self):
@@ -20,17 +20,17 @@ class Player:
         self.their_move = their_move
 
 
-class RandomPlayer(Player):
+class random_player(player):
     def move(self):
         return random.choice(self.moves)
 
 
-class ReflectPlayer(Player):
+class reflect_player(player):
     def move(self):
         return self.their_move
 
 
-class CyclePlayer(Player):
+class cycle_player(player):
     def move(self)
         if self.my_move == self.moves[0]:
             return self.moves[2]
@@ -40,7 +40,7 @@ class CyclePlayer(Player):
             return self.moves[1]
 
 
-class HumanPlayer(Player):
+class human_player(player):
     def move(self):
         while True:
             move_human = input("Rock, paper, or scissors?")
@@ -50,7 +50,7 @@ class HumanPlayer(Player):
                 exit()
 
 
-class Game:
+class game:
     def __init__(self, p1, p2):
         self.p1 = p1
         self.p2 = p2
@@ -126,5 +126,6 @@ class Game:
 
 
 if __name__ == '__main__':
-    game = Game(Player(), Player())
+    game = Game(human_player(), random.choice(
+        [random_player(), reflect_player(), cycle_player()]))
     game.play_game()
