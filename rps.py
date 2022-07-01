@@ -49,16 +49,19 @@ class HumanPlayer(Player):
                 exit()
 
 
+class Game:
+    def __init__(self, p1, p2):
+        self.p1 = p1
+        self.p2 = p2
+        self.score_p1 = 0
+        self.score_p2 = 0
+
+
 def beats(one, two):
     return ((one == 'rock' and two == 'scissors') or
             (one == 'scissors' and two == 'paper') or
             (one == 'paper' and two == 'rock'))
 
-
-class Game:
-    def __init__(self, p1, p2):
-        self.p1 = p1
-        self.p2 = p2
 
     def play_round(self):
         move1 = self.p1.move()
