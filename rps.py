@@ -126,6 +126,6 @@ class game:
 
 
 if __name__ == '__main__':
-    game = Game(human_player(), random.choice(
+    game = game(human_player(), random.choice(
         [random_player(), reflect_player(), cycle_player()]))
     game.play_game()
