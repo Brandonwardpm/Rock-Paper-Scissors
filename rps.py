@@ -39,6 +39,16 @@ class CyclePlayer(Player):
             return self.moves[1]
 
 
+class HumanPlayer(Player):
+    def move(self):
+        while True:
+            move_human = input("Rock, paper, or scissors?")
+            if move_human.lower() in self.moves:
+                return move_human.lower()
+            elif move_human.lower() == 'exit':
+                exit()
+
+
 def beats(one, two):
     return ((one == 'rock' and two == 'scissors') or
             (one == 'scissors' and two == 'paper') or
