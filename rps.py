@@ -95,11 +95,34 @@ class Game:
         self.p2.learn(move2, move1)
 
     def play_game(self):
-        print("Game start!")
-        for round in range(3):
-            print(f"Round {round}:")
+        print(
+            "Game start!"
+            "\nIf you would like to quit the game, "
+            "please enter \'exit\' when asked "
+            "\'How many rounds would you like to play?\'"
+        )
+        self.rounds()
+        for round in range(int(self.number_rounds)):
+            print(f"\nRound {round + 1}")
             self.play_round()
-        print("Game over!")
+        if self.score_p1 == self.score_p2:
+            print(
+                f"\nIt\'s a tie!"
+                f"\nScore: Player 1 ({self.score_p1}), "
+                f"Player 2 ({self.score_p2})"
+            )
+        elif self.score_p1 > self.score_p2:
+            print(
+                f"\nPlayer 1 wins!"
+                f"\nScore: Player 1 ({self.score_p1}), "
+                f"Player 2 ({self.score_p2})"
+            )
+        else:
+            print(
+                f"\nPlayer 2 wins!"
+                f"\nScore: Player 1 ({self.score_p1}), "
+                f"Player 2 ({self.score_p2})"
+            )
 
 
 if __name__ == '__main__':
