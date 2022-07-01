@@ -10,6 +10,10 @@ in this game"""
 class Player:
     moves = ['rock', 'paper', 'scissors']
 
+    def __init__(self):
+        self.hero_move = self.moves
+        self.villain_move = random.choice(self.moves)
+
     def learn(self, my_move, their_move):
         pass
 
