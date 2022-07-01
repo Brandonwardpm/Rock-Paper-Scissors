@@ -31,7 +31,7 @@ class reflect_player(player):
 
 
 class cycle_player(player):
-    def move(self)
+    def move(self):
         if self.my_move == self.moves[0]:
             return self.moves[2]
         elif self.my_move == self.moves[1]:
