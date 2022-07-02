@@ -129,4 +129,3 @@ if __name__ == '__main__':
     game = game(human_player(), random.choice(
         [random_player(), reflect_player(), cycle_player()]))
     game.play_game()
-    
