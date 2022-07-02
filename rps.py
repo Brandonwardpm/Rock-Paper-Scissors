@@ -97,7 +97,7 @@ class game:
     def play_game(self):
         print(
             "\nGet ready for an exciting "
-            "game of rock, paper, scissors!"
+            "game of rock, paper, scissors!\n"
             "\nIf you would like to quit the game, "
             "please enter \'exit\'."
         )
