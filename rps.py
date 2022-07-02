@@ -57,7 +57,7 @@ class game:
         self.score_p1 = 0
         self.score_p2 = 0
 
-    def beats(one, two):
+    def beats(self, one, two):
         return ((one == 'rock' and two == 'scissors') or
                 (one == 'scissors' and two == 'paper') or
                 (one == 'paper' and two == 'rock'))
