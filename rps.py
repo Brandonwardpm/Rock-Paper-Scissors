@@ -43,7 +43,7 @@ class cycle_player(player):
 class human_player(player):
     def move(self):
         while True:
-            move_human = input("Rock, paper, or scissors?")
+            move_human = input("Rock, paper, or scissors?\n")
             if move_human.lower() in self.moves:
                 return move_human.lower()
             elif move_human.lower() == 'exit':
