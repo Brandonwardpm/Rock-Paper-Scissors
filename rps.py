@@ -1,55 +1,6 @@
 import random
 
 
-"""This program plays a game of Rock, Paper, Scissors between two Players,
-and reports both Player's scores each round."""
-
-"""The Player class is the parent class for all of the Players
-in this game"""
-
-
-class player:
-    moves = ['rock', 'paper', 'scissors']
-
-    def __init__(self):
-        self.my_move = self.moves
-        self.their_move = random.choice(self.moves)
-
-    def learn(self, my_move, their_move):
-        self.my_move = my_move
-        self.their_move = their_move
-
-
-class random_player(player):
-    def move(self):
-        return random.choice(self.moves)
-
-
-class reflect_player(player):
-    def move(self):
-        return self.their_move
-
-
-class cycle_player(player):
-    def move(self):
-        if self.my_move == self.moves[0]:
-            return self.moves[2]
-        elif self.my_move == self.moves[1]:
-            return self.moves[0]
-        else:
-            return self.moves[1]
-
-
-class human_player(player):
-    def move(self):
-        while True:
-            move_human = input("Rock, paper, or scissors?\n")
-            if move_human.lower() in self.moves:
-                return move_human.lower()
-            elif move_human.lower() == 'exit':
-                exit()
-
-
 class game:
     def __init__(self, p1, p2):
         self.p1 = p1
@@ -123,6 +74,48 @@ class game:
                 f"\nScore: Player 1 ({self.score_p1}), "
                 f"Player 2 ({self.score_p2})"
             )
+
+
+class player:
+    moves = ['rock', 'paper', 'scissors']
+
+    def __init__(self):
+        self.my_move = self.moves
+        self.their_move = random.choice(self.moves)
+
+    def learn(self, my_move, their_move):
+        self.my_move = my_move
+        self.their_move = their_move
+
+
+class human_player(player):
+    def move(self):
+        while True:
+            move_human = input("Rock, paper, or scissors?\n")
+            if move_human.lower() in self.moves:
+                return move_human.lower()
+            elif move_human.lower() == 'exit':
+                exit()
+
+
+class cycle_player(player):
+    def move(self):
+        if self.my_move == self.moves[0]:
+            return self.moves[2]
+        elif self.my_move == self.moves[1]:
+            return self.moves[0]
+        else:
+            return self.moves[1]
+
+
+class reflect_player(player):
+    def move(self):
+        return self.their_move
+
+
+class random_player(player):
+    def move(self):
+        return random.choice(self.moves)
 
 
 if __name__ == '__main__':
