@@ -85,10 +85,10 @@ class game:
             self.score_p2 += 1
             winner = "Player 2 wins! Congratulations!"
         print(
-            f"You threw: {move1}"  
-            f"\n Our opponent threw: {move2}"
+            f"\n\nYou threw: {move1}"  
+            f"\nYour opponent threw: {move2}"
             f"\n{winner}"
-            f"\nScore: Player 1 ({self.score_p1}),"
+            f"\nScore: Player 1 ({self.score_p1}), "
             f"Player 2 ({self.score_p2})"
         )
         self.p1.learn(move1, move2)
